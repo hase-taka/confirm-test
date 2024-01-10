@@ -1,0 +1,53 @@
+
+
+.base-box {
+    display: inline-block;
+    position: relative;
+    width: 1230px;
+}
+
+.thanks-body__background-text {
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 280px;
+    font-family: 'Inika';
+    top: 40%;
+    left: 2%;
+    color: #8B7969;
+    opacity: 0.05;
+}
+
+.thanks-body__title h2 {
+    display: inline-block;
+    position: absolute;
+    padding: 20px;
+    font-size: 30px;
+    top: 280px;
+    left: 38%;
+    right: 0;
+    bottom: 0;
+}
+
+h2 {
+    color: #8B7969;
+}
+
+.home__button {
+    width: 110px;
+    margin: 15px auto;
+    
+}
+
+.home-button__href {
+    padding: 5px 5px 5px 35px;
+    width: 80px;
+    text-decoration: none;
+    background: #8B7969;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: 430px;
+    left:55%;
+}

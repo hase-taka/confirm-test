@@ -1,0 +1,155 @@
+.contact-form {
+    width: 70%;
+    margin: 0 auto;
+}
+.contact-form__group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contact-form__first-name {
+    margin-right: 20px;
+}
+
+.contact-form__group-title  {
+    width: 30%;
+    height:25px;
+    margin: 15px auto;
+    text-align: left;
+}
+
+.contact-form__group-content {
+    width: 70%;
+    margin: 15px 15px;
+    text-align: left;
+}
+
+.contact-form__input-text {
+    display: flex;
+    margin: 0 10px 0 0;
+    width: 100%;
+    height: 25px;
+}
+
+.contact-form__input-text input,
+.contact-form__select select {
+    background-color: #F4F4F4;
+    border: none;
+    width: 100%;
+    height: 25px;
+
+}
+
+
+
+select option:first-child {
+    color: #BEB1A6;
+}
+
+select:invalid {
+    color: #BEB1A6;
+}
+
+select option {
+    color: black;
+}
+
+.contact-form__select {
+    width: 100%;
+    position: relative;
+}
+
+.contact-form__select::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 8px 0 8px;
+    border-color: #8B7969 transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.contact-form__select-item {
+    width: 100%;
+    padding-left: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+// IE用
+.select-box__item::-ms-expand {
+    display: none;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+input[type="radio"]:checked {
+    border-color:#8B7969;
+    background-color: #8B7969;
+}
+
+.input-span {
+    color: #8B7969;
+    margin: 0 10px;
+}
+
+.contact-form__label--required {
+    color: #FF9494;
+}
+
+textarea {
+    resize: none;
+}
+
+::placeholder {
+    font-family: 'Inika';
+    color: #BEB1A6;
+    padding-left: 20px;
+}
+
+.contact-form__input-tel::placeholder {
+    text-align: center;
+}
+
+.contact-form__input-textarea textarea {
+    background-color: #F4F4F4;
+    border: none;
+    width: 100%;
+    height: 110px;
+}
+
+.contact-form__button {
+    width: 110px;
+    margin: 15px auto;
+}
+
+.contact-form__button-submit {
+    padding: 5px;
+    width: 100%;
+    border: none;
+    background: #8B7969;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact-form__error {
+    display: flex;
+    color: #FF9494;
+    text-align: center;
+
+}
