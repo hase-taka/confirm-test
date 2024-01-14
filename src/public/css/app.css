@@ -8,21 +8,24 @@
 }
 
 .header__logo {
-    font-size: 45px;
+    font-size: 50px;
     font-family: 'Inika', serif;
-    padding: ;
     color: #8B7969;
     text-align: center;
-    
+    font-weight: normal;
 }
 
 .main {
     max-width: 1230px;
 }
 
-.main__title {
+.main__title  {
     font-size: 35px;
     color: #8B7969;
     text-align: center;
     font-family: 'Inika', serif;
+}
+
+h2 {
+    font-weight: normal;
 }

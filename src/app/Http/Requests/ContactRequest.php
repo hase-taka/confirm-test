@@ -24,8 +24,8 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => ['required'],
             'last_name' => ['required'],
+            'first_name' => ['required'],
             'gender' => ['required'],
             'email' => ['required', 'email'],
             'tel1' => ['required', 'numeric', 'digits_between:0,5'],
@@ -34,13 +34,16 @@ class ContactRequest extends FormRequest
             'address' => ['required'],
             'content' => ['required'],
             'detail' => ['required', 'max:120'],
-        ];
+            'name' => ['required'],
+            'email2' => ['required', 'email'],
+            'password' => ['required'],
+                ];
     }
 
     public function messages(){
         return [
-        'first_name.required' => '姓を入力してください',
-        'last_name.required' => '名を入力してください',
+        'last_name.required' => '姓を入力してください',
+        'first_name.required' => '名を入力してください',
         'gender.required' => '性別を入力してください',
         'email.required' => 'メールアドレスを入力してください',
         'email.email' => 'メールアドレスはメース形式で入力して下さい',
@@ -54,9 +57,13 @@ class ContactRequest extends FormRequest
         'tel3.numeric' => '電話番号は5桁までの数字で入力してください',
         'tel3.digits_between' => '電話番号は5桁までの数字で入力してください',
         'address.required' => '住所を入力してください',
-        'cotent.required' => 'お問い合わせの種類を選択してください',
+        'content.required' => 'お問い合わせの種類を選択してください',
         'detail.required' => 'お問合せ内容を入力してください',
         'detail.max' => 'お問い合わせ内容は120文字以内で入力してください',
-        ];
+        'name.required' => 'お名前を入力してください',
+        'email2.required' => 'メールアドレスを入力してください',
+        'email2.email' => 'メールアドレスは「ユーザー名＠ドメイン」形式で入力してください',
+        'password.required' => '',
+            ];
     }
 }

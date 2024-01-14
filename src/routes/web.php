@@ -14,7 +14,20 @@ use App\Http\Controllers\ContactController;
 |
 */
 
+//概ねok
 Route::get('/', [ContactController::class, 'index']);
-Route::get('/thanks', [ContactController::class, 'thanks']);
+
 Route::post('/confirm', [ContactController::class, 'confirm']);
-Route::post('/contacts', [ContactController::class, 'store']);
+Route::post('/contact', [ContactController::class, 'store']);
+
+Route::get('/register', [ContactController::class, 'register']);
+Route::get('/login', [ContactController::class, 'login']);
+
+
+//作成中
+Route::get('/admin', [ContactController::class, 'show']);
+
+
+
+
+

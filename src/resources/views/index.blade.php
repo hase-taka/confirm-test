@@ -18,8 +18,8 @@ Contact
         </div>
         <div class="contact-form__group-content">
             <div class="contact-form__input-text">
-                <input class="contact-form__first-name" type="text" name="first_name" placeholder="例：山田" value="{{ old('first_name') }}" >
-                <input type="text" name="last_name" placeholder="例：太郎" value="{{ old('last_name') }}" >
+                <input class="contact-form__last-name" type="text" name="last_name" placeholder="例：山田" value="{{ old('last_name') }}" >
+                　<input type="text" name="first_name" placeholder="例：太郎" value="{{ old('first_name') }}">
             </div>
         </div>
     </div>
@@ -46,11 +46,11 @@ Contact
                 <span class="input-span">その他</span>
             </div>
         </div>
-        <div class="contact-form__error">
-            @error ('gender')
-                {{ $message }}
-            @enderror<!--バリデーション後-->
-        </div>
+    </div>
+    <div class="contact-form__error">
+        @error ('gender')
+            {{ $message }}
+        @enderror<!--バリデーション後-->
     </div>
     <div class="contact-form__group">
         <div class="contact-form__group-title">
@@ -103,7 +103,7 @@ Contact
         </div>
         <div class="contact-form__group-content">
             <div class="contact-form__input-text">
-                <input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷1−2−3" value="{{ old('address1') }}" >
+                <input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷1−2−3" value="{{ old('address') }}" >
             </div>
         </div>
     </div>
@@ -118,7 +118,7 @@ Contact
         </div>
         <div class="contact-form__group-content">
             <div class="contact-form__input-text">
-                <input type="text" name="building" placeholder="例：千駄ヶ谷マンション101" value="{{ old('address2') }}" >
+                <input type="text" name="building" placeholder="例：千駄ヶ谷マンション101" value="{{ old('building') }}" >
             </div>
         </div>
     </div>
@@ -129,14 +129,12 @@ Contact
         </div>
         <div class="contact-form__group-content">
             <div class="contact-form__select">
-                <select name="content" onchange="changeColor(this)" class="contact-form__select-item" required>
-                    <option value="">選択してください</option>
-                    <option value="商品のお届けについて">商品のお届けについて</option>
-                    <option value="商品の交換について">商品の交換について</option>
-                    <option value="商品トラブル">商品トラブル</option>
-                    <option value="ショップへのお問い合わせ">ショップへのお問い合わせ</option>
-                    <option value="その他">その他</option>
-                </select>
+                <select name="content" id="content" onchange="changeColor(this)" class="contact-form__select-item" required>
+                <option value="">選択してください</option>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->content }}</option>
+            @endforeach
+        </select>
             </div>
         </div>
     </div>
@@ -152,7 +150,7 @@ Contact
         </div>
         <div class="contact-form__group-content">
             <div class="contact-form__input-textarea">
-                <textarea name="detail" placeholder="お問い合わせ内容をご記載ください"></textarea>
+                <textarea name="detail" placeholder="お問い合わせ内容をご記載ください"  value="{{ old('detail') }}"></textarea>
             </div>
         </div>
     </div>

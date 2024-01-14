@@ -3,7 +3,7 @@
     margin: 0 auto;
 }
 
-.confirm-table__gender {
+.confirm-table__gender , .confirm-table__category_id {
     color: #8B7969;
     padding-top: 15px;
 }

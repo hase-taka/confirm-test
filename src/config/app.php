@@ -135,6 +135,8 @@ return [
     */
 
     'providers' => [
+    App\Providers\RouteServiceProvider::class,
+    App\Providers\FortifyServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...

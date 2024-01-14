@@ -83,7 +83,7 @@ select option {
     appearance: none;
 }
 
-// IE用
+
 .select-box__item::-ms-expand {
     display: none;
 }

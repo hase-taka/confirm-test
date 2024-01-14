@@ -14,4 +14,18 @@ class Category extends Model
     public function contacts(){
         return $this->hasMany(Contact::class);
     }
+
+    protected $table = 'categories';
+
+    public function getData(){
+        $categories = Category::table($this->table)->get();
+        return $categories;
+    }
+
+    public function getLists()
+    {
+        $categories = Category::pluck('content', 'id');
+
+        return $categories;
+}
 }
