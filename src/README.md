@@ -1,11 +1,10 @@
 # 確認テスト
-ああああ
 
 ## 環境構築
 
 Dockerビルド
-1.git clone url
-2.docker-compose up -d --build
+1. git clone url
+2. docker-compose up -d --build
 
 Laravel環境構築
 
@@ -16,11 +15,14 @@ Laravel環境構築
 5. php artisan migrate
 6. php artisan DB:seed
 
-##　使用技術
+## 使用技術
 - PHP 8.0
 - Laravel 10.0
 - Mysql 8.0
 
-##　URL
+## ER図
+
+
+## URL
 - 開発環境:<http://localhost/>
 - phpMyAdmin:<http://localhost:8080/>
