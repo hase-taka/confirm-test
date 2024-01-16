@@ -21,13 +21,15 @@ Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/contact', [ContactController::class, 'store']);
 
 Route::get('/register', [ContactController::class, 'register']);
-Route::get('/login', [ContactController::class, 'login']);
+Route::post('/register', [ContactController::class, 'register']);
+Route::post('/login', [ContactController::class, 'login']);
 
 
 //作成中
 Route::get('/admin', [ContactController::class, 'show']);
+Route::post('/admin', [ContactController::class, 'search']);
 
-
+Route::delete('/delete', [ContactController::class, 'destroy']);
 
 
 

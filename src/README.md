@@ -3,7 +3,7 @@
 ## 環境構築
 
 Dockerビルド
-1. git clone url
+1. git clone 
 2. docker-compose up -d --build
 
 Laravel環境構築
@@ -16,9 +16,9 @@ Laravel環境構築
 6. php artisan DB:seed
 
 ## 使用技術
-- PHP 8.0
-- Laravel 10.0
-- Mysql 8.0
+- PHP 7.49
+- Laravel 8.83.8
+- Mysql 8.0.26
 
 ## ER図
 

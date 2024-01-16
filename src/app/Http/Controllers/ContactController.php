@@ -11,11 +11,12 @@ class ContactController extends Controller
 {
     public function index(){
         $categories = category::all();
-        return view('index',compact('categories'));
+        return view('index',compact('categories',));
     }
 
     public function confirm(ContactRequest $request){
         $contact = $request->only(['first_name','last_name', 'gender','email','tel1','tel2','tel3','address','building','category_id','detail']);
+        dd($contact);
         return view('confirm', compact('contact'));
     }
 
@@ -32,6 +33,12 @@ class ContactController extends Controller
         $categories = Category::all();
         return view('admin',compact('category'));
     }
+
+    public function destroy(Request $request){
+        Contact::find($request->id)->delete();
+        return redirect('/admin');
+    }
+
 
     //未完成
     public function register(ContactRequest $request){

@@ -6,40 +6,46 @@ Admin
 
 @section('content')
 <main>
-  <div class="container">
-    <div class="mx-auto">
+  <div class="admin-body">
+    <div class="admin-body__inner">
       <!--検索フォーム-->
-      <div class="row">
-        <div class="col-sm">
-          <form method="post" action="/admin">
-            <div class="form-group row">
-              <label class="col-sm-2 col-form-label">商品名</label>
-              <!--入力-->
-              <div class="col-sm-5">
-                <input type="text" class="form-control" name="searchWord" value="{{ old('searchWord')}}">
-              </div>
-              <div class="col-sm-auto">
-                <button type="submit" class="btn btn-primary ">検索</button>
-              </div>
-            </div>     
-            <!--プルダウンカテゴリ選択-->
-            <div class="form-group row">
-              <label class="col-sm-2">商品カテゴリ</label>
-              <div class="col-sm-3">
-                <input class="create-form__item-input" type="text" name="content" value="{{ old('content') }}">
-                <select class="create-form__item-select" name="category_id">
-                @foreach ($categories as $category)
-                <option value="">未選択</option>
-                <option value="{{ $category->id }}">{{ $category->content }}</option>
-                @endforeach
-                </select>
-              </div>
+      <div class="search-form">
+        <form class="search-form__inner" method="post" action="/admin">
+          <div class="form-group row">
+            <div class="search-form__search-word">
+              <input type="text" class="searchWord" name="searchWord" value="{{ old('searchWord')}}" placeholder="名前やメールアドレスを入力してください">
             </div>
-          </form>
-        </div>
+            <div class="search-word__button">
+              <button class="search-word__button-submit" type="submit" class="btn btn-primary ">検索</button>
+            </div>
+          </div>     
+          <!--プルダウンカテゴリ選択-->
+          <div class="form-group row">
+            <div class="search-form__gender">
+              <select class="search-form__gender-inner" name="gender">
+              <option value="">性別</option>
+              @foreach ($contacts as $contact)
+              <option value="{{ $contact->gender }}">
+                  <?php
+                  if ($contact['gender'] == '1') {echo '男性';} else if ($contact['gender'] == '2') {echo '女性';} else if ($contact['gender'] == '3') {echo 'その他';} ?>
+              </option>
+              @endforeach
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-3">
+              <select class="create-form__item-select" name="category_id">
+              <option value="">お問合せの種類</option>
+              @foreach ($categories as $category)
+              <option value="{{ $category->id }}">{{ $category->content }}</option>
+              @endforeach
+              </select>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-
   </div>
 
 
@@ -50,6 +56,7 @@ Admin
 {{ $contacts->links() }}
 
 <!-- 一覧table -->
+@if (@isset($item))
 <table>
     <thead>
         <tr>
@@ -72,4 +79,5 @@ Admin
         @endforeach
     </tbody>
 </table>
+@endif
 @endsection

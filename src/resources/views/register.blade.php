@@ -37,34 +37,34 @@
                     <div class="register-form__input">
                         <input class="register-form__input-name" type="text" name="name" placeholder="例：山田　太郎" value="{{ old('name') }}">
                     </div>
-                    <div class="register-form__error">
+                </div>
+                <div class="register-form__error">
                     @error ('name')
                         {{ $message }}
                     @enderror<!--バリデーション後-->
-                    </div>
                 </div>
                 <div class="register-form__group-item">
                     <span>メールアドレス</span>
                     <div class="register-form__input">
                         <input class="register-form__input-email" type="email" name="email" placeholder="例：test@example.com" value="{{ old('email') }}">
                     </div>
-                    <div class="register-form__error">
-                    @error ('email2')
+                </div>
+                <div class="register-form__error">
+                    @error ('email')
                         {{ $message }}
                     @enderror<!--バリデーション後-->
                     </div>
-                </div>
                 <div class="register-form__group-item">
                     <span>パスワード</span>
                     <div class="register-form__input">
                         <input class="register-form__input-password" type="password" name="password" placeholder="例：coachtech1106" value="{{ old('password') }}">
                     </div>
-                    <div class="register-form__error">
+                </div>
+                <div class="register-form__error">
                     @error ('password')
                         {{ $message }}
                     @enderror<!--バリデーション後-->
                     </div>
-                </div>
                 <div class="register-form__button">
                 <button class="register-form__button-submit">登録</button>
                 </div>
