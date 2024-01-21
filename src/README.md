@@ -21,6 +21,7 @@ Laravel環境構築
 - Mysql 8.0.26
 
 ## ER図
+<img width="677" alt="スクリーンショット 2024-01-14 12 35 49" src="https://github.com/hase-taka/confirm-test/assets/148784913/c4ab8461-a3a8-4e1f-a625-5a07f7b985aa">
 
 
 ## URL
